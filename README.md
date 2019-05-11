@@ -21,14 +21,17 @@ It is a vert short cycles of three phases:
  
 
 # Fibonacci, an example of TDD application
-Let's apply TDD to the Fibonacci numbers, below the formula:\
+Let's apply TDD to the Fibonacci numbers, below the formula:
+
 ![fibonacci formula, part 1](https://latex.codecogs.com/svg.latex?\large&space;f_{0}&space;=&space;0,&space;\&space;if\&space;\&space;n&space;=&space;0)\
 ![fibonacci formula, part 2](https://latex.codecogs.com/svg.latex?\large&space;f_{0}&space;=&space;1,&space;\&space;if\&space;\&space;n&space;=&space;1)\
 ![fibonacci formula, part 3](https://latex.codecogs.com/svg.latex?\large&space;f_{n}&space;=&space;f_{n-1}&space;&plus;&space;f{n-2},&space;\&space;\&space;\&space;if\&space;n&space;>&space;1)\
+
 We don't care about invalid input values.
 The IDE of reference is Eclipse with JUnit 4 library, the project to import, is into "TDDFibonacciExample" folder.\
-The first chunck of functionality to implement is:\
-![fibonacci formula, part 1](https://latex.codecogs.com/svg.latex?\large&space;f_{0}&space;=&space;0,&space;\&space;if\&space;\&space;n&space;=&space;0)\
+The first chunck of functionality to implement is:
+
+![fibonacci formula, part 1](https://latex.codecogs.com/svg.latex?\large&space;f_{0}&space;=&space;0,&space;\&space;if\&space;\&space;n&space;=&space;0)
 
 We create into the **folder "test", a class named "FibonacciTest.java"** and we start to consider the **red phase** , this is an example of method that should be implemented : 
 
@@ -75,9 +78,9 @@ public class Fibonacci {
 
 }
   ```
-  Run again the test and see if it fails, whether not, go to the next functionality, that is:\
+  Run again the test and see if it fails, whether not, go to the next functionality, that is:
 
-![fibonacci formula, part 2](https://latex.codecogs.com/svg.latex?\large&space;f_{0}&space;=&space;1,&space;\&space;if\&space;\&space;n&space;=&space;1)\
+![fibonacci formula, part 2](https://latex.codecogs.com/svg.latex?\large&space;f_{0}&space;=&space;1,&space;\&space;if\&space;\&space;n&space;=&space;1)
 
 **Red phase**:
 ```java
@@ -121,7 +124,7 @@ public class FibonacciTest {
 	
 }
 ```	
-Now we can implement the last functionality:\
+Now we can implement the last functionality:
 
 ![fibonacci formula, part 3](https://latex.codecogs.com/svg.latex?\large&space;f_{n}&space;=&space;f_{n-1}&space;&plus;&space;f{n-2},&space;\&space;\&space;\&space;if\&space;n&space;>&space;1)\
 **Red phase**
