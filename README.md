@@ -1,9 +1,21 @@
+
+
+
 # Software-testing-techniques
 
 Hi! In this repository i'm going to analyze  different techniques for  **Software Testing**. The first is  **Test driven development**, one of the most famous 
 **Agile  development techniques**, proposed for the first time in 2002 by Kent Beck.\
 It is an approach to software development in which developers interleave testing and code development. Developers (not testers) first write automated unit tests for small functionalities and then the associated production code.\
 The aim of this repository is explains how use TDD and other technics, but first i need to clarify the way for read TDD test code.
+
+This is the specifics of the PigLatin Excercise:
+[Pig latin specifics](https://github.com/Armando1514/Software-testing-techniques/blob/master/PigLatinSpecifics.pdf)
+and here there is a project implemented:
+[Project implemented](https://github.com/Armando1514/Software-testing-techniques/tree/master/TDDPiglatin)
+> **Note**: I applied [the testing mutation](https://en.wikipedia.org/wiki/Mutation_testing) technique for evaluate the test case that i wrote, and the score was high. I suggest you to use it for comparison with your code . 
+
+For understand the way to read it, please  read the explanation below for realize the path to apply TDD technique. 
+
 
 # TDD Mantra
 It is a vert short cycles of three phases:  
@@ -25,7 +37,7 @@ Let's apply TDD to the Fibonacci numbers, below the formula:
 
 ![fibonacci formula, part 1](https://latex.codecogs.com/svg.latex?\large&space;f_{0}&space;=&space;0,&space;\&space;if\&space;\&space;n&space;=&space;0)\
 ![fibonacci formula, part 2](https://latex.codecogs.com/svg.latex?\large&space;f_{0}&space;=&space;1,&space;\&space;if\&space;\&space;n&space;=&space;1)\
-![fibonacci formula, part 3](https://latex.codecogs.com/svg.latex?\large&space;f_{n}&space;=&space;f_{n-1}&space;&plus;&space;f{n-2},&space;\&space;\&space;\&space;if\&space;n&space;>&space;1)\
+![fibonacci formula, part 3](https://latex.codecogs.com/svg.latex?\large&space;f_{n}&space;=&space;f_{n-1}&space;&plus;&space;f{n-2},&space;\&space;\&space;\&space;if\&space;n&space;>&space;1)
 
 We don't care about invalid input values.
 The IDE of reference is Eclipse with JUnit 4 library, the project to import, is into "TDDFibonacci" folder.\
@@ -155,3 +167,7 @@ Is this abstraction correct ? i don't know, but i can make further tests like "b
 	}
 ```
 >
+Here there is the fibonacci exercise implemented :
+[Fibonacci exercise](https://github.com/Armando1514/Software-testing-techniques/tree/master/TDDFibonacci)
+
+
