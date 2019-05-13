@@ -1,15 +1,78 @@
 
-
-
 # Software-testing-techniques
 
-Hi! In this repository i'm going to analyze  different techniques for  **Software Testing**. The first is  **Test driven development**, one of the most famous 
+Hi! In this repository i'm going to analyze  different techniques for  **Software Testing**. 
+
+# Specification based testing
+Testing strategy  to design test based on system specifications without any reference to the internal structure of the system. The internal structure is unknow or ignored. It is also known as block-box testing. 
+ 
+## Boundary value testing
+The best-known specification based testing technique, it focuses on the boundary of the input domain to identify test cases. **Rationale**: Errors tend to occur near the boundary of the input domain. Four variants of boundary value testing:
+
+ - Normal
+ - Robust
+ - Worst case
+ - Robust worst case
+### Normal boundary value testing
+it only considers allowed input values:
+ - Their min
+ - Just above the min (min +)
+ - Their nominal value (nom)
+ - Just below their (max-)
+ - Their max
+ >**Note**: it is based on the **single fault assumption**: failures are only rarely the result of the co-occurrence of two (or more) faults.
+ 
+ **How apply it?** 
+ Holding the values of all the variables at nominal values, but  one variable at the nominal value, and letting that variable assume its min, min+, nom, max- and max. Repeat this process for each variable ( starting from three variable with nominal value, let one variable assume its full set of values, at the end, repeat the process).
+
+
+### Robust boundary value testing
+An extension of normal boundary value testing, always based on the single fault assumption, it aims to see what happens when the extremes are slightly exceeded: In addition to **min**, **min+**, **nom**, **max-**, and **max** values, it considers values just outside the variable boundaries: **min-**  and **max+**.
+
+### Worst case boundary value testing
+The single fault assumption is rejected. It considers the worst cases but within the variable boundaries (don't hold one variable at the nominal value and letting that assume different values, but let all the variables assume different values).
+
+### Robust Worst case boundary value testing
+The single fault assumption is rejected. It considers the worst cases within the variable boundaries and **just outside**.
+
+### Example of boundary value testing and robust boundary value testing , the triangle problem
+
+**Problem**: The integers a, b, and c must satisfy the following **conditions**:
+
+ - C1: 1<= a <= 200
+ - C2: 1<= b <= 200
+ - C3: 1<= c <= 200
+ - C4: a < b + c
+ - C5: b < a + c
+ - C6: c < a + b
+
+In an input value fails any of the conditions C1, C2 or C3, the program prints an error output message.
+
+if values of a, b , and c satisfy conditions C4, C5, and C6, one of this three mutually exclusive outputs is given:
+
+ - If all three sides are equal, the program output is Equilateral.
+ - If just one pair of sides is equal, the program output is isosceles
+ - If no pair of sides is equal, the program output is Scalene
+
+In any conditions C4, C5 and C6 is not met, the program output is NotATriangle.
+
+For n input variables in the normal boundary value we have **4n +1 ** test cases.
+The implementation of normal boundary testing is in the directory below, i also provide an implementation of the robust boundary testing.
+[Project robust boundary testing and normal boundary testing](https://github.com/Armando1514/Software-testing-techniques/tree/master/STTriangle)
+Remember that is specification based testing (**you must not read the implementation !**).
+>**Note**: In the implementation we e never test if is or not scalene, because normal boundary  and robust boundary testing have a strong single fault assumption: failures are only rarely the result of the co-occurrence of two (or more faults) and scalene depends on 3 variables not at nominal value.
+
+I didn't implement worst-case boundary value and robust worst-case value testing  because is too time consuming to implement, the first for  n input variables generates 5 ^ n test cases, by cause of  each variable that you are able to assign different values allowed in normal boundary value testing for the first, and robust boundary testing for the second , for example a=1, b=2, c=200.
+
+# Test driven development
+
+ **Test driven development**, one of the most famous 
 **Agile  development techniques**, proposed for the first time in 2002 by Kent Beck.\
 It is an approach to software development in which developers interleave testing and code development. Developers (not testers) first write automated unit tests for small functionalities and then the associated production code.\
 The aim of this repository is explains how use TDD and other technics, but first i need to clarify the way for read TDD test code.
 
-This is the specifics of the PigLatin Excercise:
-[Pig latin specifics](https://github.com/Armando1514/Software-testing-techniques/blob/master/PigLatinSpecifics.pdf)
+This is the documentation of the PigLatin exercise:
+[Pig latin documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/PigLatinSpecifics.pdf)
 and here there is a project implemented:
 [Project implemented](https://github.com/Armando1514/Software-testing-techniques/tree/master/TDDPiglatin)
 > **Note**: I applied [the testing mutation](https://en.wikipedia.org/wiki/Mutation_testing) technique for evaluate the test case that i wrote, and the score was high. I suggest you to use it for comparison with your code . 
@@ -17,7 +80,7 @@ and here there is a project implemented:
 For understand the way to read it, please  read the explanation below for realize the path to apply TDD technique. 
 
 
-# TDD Mantra
+## TDD Mantra
 It is a vert short cycles of three phases:  
 
 |                |                      |                 
@@ -32,7 +95,7 @@ It is a vert short cycles of three phases:
 
  
 
-# Fibonacci, an example of TDD application
+## Fibonacci, an example of TDD application
 Let's apply TDD to the Fibonacci numbers, below the formula:
 
 ![fibonacci formula, part 1](https://latex.codecogs.com/svg.latex?\large&space;f_{0}&space;=&space;0,&space;\&space;if\&space;\&space;n&space;=&space;0)\
