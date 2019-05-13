@@ -6,14 +6,14 @@ Hi! In this repository i'm going to analyze  different techniques for  **Softwar
 # Specification based testing
 Testing strategy  to design test based on system specifications without any reference to the internal structure of the system. The internal structure is unknow or ignored. It is also known as block-box testing. 
  
-## Boundary value testing
+# Boundary value testing
 The best-known specification based testing technique, it focuses on the boundary of the input domain to identify test cases. **Rationale**: Errors tend to occur near the boundary of the input domain. Four variants of boundary value testing:
 
  - Normal
  - Robust
  - Worst case
  - Robust worst case
-### Normal boundary value testing
+## Normal boundary value testing
 it only considers allowed input values:
  - Their min
  - Just above the min (min +)
@@ -26,16 +26,35 @@ it only considers allowed input values:
  Holding the values of all the variables at nominal values, but  one variable at the nominal value, and letting that variable assume its min, min+, nom, max- and max. Repeat this process for each variable ( starting from three variable with nominal value, let one variable assume its full set of values, at the end, repeat the process).
 
 
-### Robust boundary value testing
+## Robust boundary value testing
 An extension of normal boundary value testing, always based on the single fault assumption, it aims to see what happens when the extremes are slightly exceeded: In addition to **min**, **min+**, **nom**, **max-**, and **max** values, it considers values just outside the variable boundaries: **min-**  and **max+**.
 
-### Worst case boundary value testing
+## Worst case boundary value testing
 The single fault assumption is rejected. It considers the worst cases but within the variable boundaries (don't hold one variable at the nominal value and letting that assume different values, but let all the variables assume different values).
 
-### Robust Worst case boundary value testing
+## Robust Worst case boundary value testing
 The single fault assumption is rejected. It considers the worst cases within the variable boundaries and **just outside**.
 
-### Example of boundary value testing and robust boundary value testing , the triangle problem
+
+# Equivalence class testing
+
+Specification based testing technique relying on defining equivalence classes of the input domain (or also output range).
+Formally, equivalence classes are mutually disjoint subsets; the union of which is the entire set (i.e. the input domain).
+Four variants of equivalence class testing:
+ - Weak normal
+ - Strong normal
+ - Weak robust
+ - Strong robust
+## Weak normal equivalence class testing
+Based on the **single-fault** assumption (weak). To define test cases, select one value from each equivalence class of valid values.
+## Strong normal equivalence class testing
+Based on the **multiple - fault ** assumption (strong). To define
+test cases, select one element from the Cartesian product of the equivalence classes of valid values.
+## Weak robust equivalence class testing
+Based on the **single-fault** assumption. To define test cases, select one value from each equivalence class of both valid and invalid values (robust).
+## Strong robust equivalence class testing
+Based on the **multiple-fault** assumption. To define test cases, select one element from the Cartesian product of the equivalence classes of valid and invalid values.
+# Example of boundary value testing and equivalence class testing, the triangle problem
 
 **Problem**: The integers a, b, and c must satisfy the following **conditions**:
 
@@ -55,14 +74,30 @@ if values of a, b , and c satisfy conditions C4, C5, and C6, one of this three m
  - If no pair of sides is equal, the program output is Scalene
 
 In any conditions C4, C5 and C6 is not met, the program output is NotATriangle.
+[ Link project.](https://github.com/Armando1514/Software-testing-techniques/blob/master/STTriangle)
+
+## Normal Boundary value testing and robust boundary value testing
 
 For n input variables in the normal boundary value we have **4n +1 ** test cases.
-The implementation of normal boundary testing is in the directory below, i also provide an implementation of the robust boundary testing.
-[Project robust boundary testing and normal boundary testing](https://github.com/Armando1514/Software-testing-techniques/tree/master/STTriangle)
+The implementation of normal boundary testing is in the directory below, i also provide an implementation of the robust boundary testing. 
+[ Test cases for robust boundary testing and normal boundary testing.](https://github.com/Armando1514/Software-testing-techniques/blob/master/STTriangle/test/sT/BoundaryValueTestingTriangle.java) 
+
 Remember that is specification based testing (**you must not read the implementation !**).
 >**Note**: In the implementation we e never test if is or not scalene, because normal boundary  and robust boundary testing have a strong single fault assumption: failures are only rarely the result of the co-occurrence of two (or more faults) and scalene depends on 3 variables not at nominal value.
 
 I didn't implement worst-case boundary value and robust worst-case value testing  because is too time consuming to implement, the first for  n input variables generates 5 ^ n test cases, by cause of  each variable that you are able to assign different values allowed in normal boundary value testing for the first, and robust boundary testing for the second , for example a=1, b=2, c=200.
+
+## Weak normal equivalence class and weak robust equivalence class testing
+ Four possible outputs can occur:
+ * NotAtriangle
+ * Scalene
+ * Isosceles
+ * Equilateral
+
+Four equivalence classes of the output range.
+Because no valid subIntervals of variables a, b and c exist, the strong  normal equivalence class test cases are identical to the weak normal equivalence class test cases (Strong robust too time consuming for implementation).
+Here the implementation:
+[ Test cases for equivalence class testing.](https://github.com/Armando1514/Software-testing-techniques/blob/master/STTriangle/test/sT/EquivalenceClassTesting.java) 
 
 # Test driven development
 

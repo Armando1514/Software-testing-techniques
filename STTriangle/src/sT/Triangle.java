@@ -20,84 +20,74 @@ if values of a, b , and c satisfy conditions C4, C5, and C6, one of this three m
 In any conditions C4, C5 and C6 is not met, the program output is NotATriangle.
 
  */
-public class Triangle {
+class Triangle {
 
-	public Triangle(int a, int b, int c) throws IllegalArgumentException
-	{
-		if(legalValue(a) && legalValue(b) && legalValue(c))
-		{
-			this.setA(a);
-			this.setB(b);
-			this.setC(c);
-		}
-		else
-			throw new IllegalArgumentException("Error output message: no legal values");
-	}
-	
-	private int a;
-	private int b;
-	private int c;
-	
-	public Boolean legalValue(int x)
-	{
-		if(x >= 1 && x <= 200)
-			return true;
-		else
-			return false;
-	}
-	
-	public String problemResolution()
-	{
-		int x = this.getA();
-		int y = this.getB();
-		int z = this.getC();
-		
-		if(satisfactionCondition(x, y, z))
-		{	
-			if((x == y) &&(x == z))
-				return "Equilater";
-			else if ((x == y && x != z ) || (x == z && y != z ) || (y == z && x != z ))
-				return "Isosceles";
-			else 
-				return "Scalene";
-		}
-		else
-			return "NotATriangle";
-	}
-	
-	public boolean satisfactionCondition(int x, int y, int z)
-	{
-		if(x < y + z)
-			return true;
-		else if(y < x + z)
-			return true;
-		else if(z < x + y)
-			return true;
-		else
-			return false;
-					
-	}
-	
-	
-	public int getA() {
-		return a;
-	}
-	public void setA(int a) {
-		this.a = a;
-	}
-	public int getB() {
-		return b;
-	}
-	public void setB(int b) {
-		this.b = b;
-	}
-	public int getC() {
-		return c;
-	}
-	public void setC(int c) {
-		this.c = c;
-	}
-	
-	
+    public Triangle(int a, int b, int c) throws IllegalArgumentException
+    {
+        if(legalValue(a) && legalValue(b) && legalValue(c))
+        {
+            this.setA(a);
+            this.setB(b);
+            this.setC(c);
+        }
+        else
+            throw new IllegalArgumentException("Error output message: no legal values");
+    }
+
+    private int a;
+    private int b;
+    private int c;
+
+    private Boolean legalValue(int x)
+    {
+        return x >= 1 && x <= 200;
+    }
+
+    public String problemResolution()
+    {
+        int x = this.getA();
+        int y = this.getB();
+        int z = this.getC();
+
+        if(satisfactionCondition(x, y, z))
+        {
+            if((x == y) &&(x == z))
+                return "Equilater";
+            else if (x == y && x != z || x == z || y == z)
+                return "Isosceles";
+            else
+                return "Scalene";
+        }
+        else
+            return "NotATriangle";
+    }
+
+    private boolean satisfactionCondition(int x, int y, int z)
+    {
+        return (x < y + z) && (y < x + z) && (z < x + y);
+
+    }
+
+
+    private int getA() {
+        return a;
+    }
+    private void setA(int a) {
+        this.a = a;
+    }
+    private int getB() {
+        return b;
+    }
+    private void setB(int b) {
+        this.b = b;
+    }
+    private int getC() {
+        return c;
+    }
+    private void setC(int c) {
+        this.c = c;
+    }
+
+
 }
 
