@@ -1,7 +1,17 @@
 
 # Software-testing-techniques
 
-Hi! In this repository i'm going to analyze  different techniques for  **Software Testing**. 
+Hi! In this repository i am going to analyze different techniques for  **Software Testing**. 
+Exercise:
+**Specification based testing exercise**
+ - [Tennis game](https://github.com/Armando1514/Software-testing-techniques/tree/master/TSTennisGame), [Pig latin documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/TennisGameDocumentation)
+ -  [Triangle problem](https://github.com/Armando1514/Software-testing-techniques/tree/master/STTriangle), (explanation in theory, scroll down.)
+ 
+**TDD exercise**
+ - [Pig latin ](https://github.com/Armando1514/Software-testing-techniques/tree/master/TDDPiglatin), [Pig latin documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/PigLatinDoc.pdf)
+ - [Fibonacci ](https://github.com/Armando1514/Software-testing-techniques/tree/master/TDDFibonacci), (explanation in theory, scroll down.)
+
+For understand how read the exercise, my suggest is to read the theory, **scroll down**.
 
 # Specification based testing
 Testing strategy  to design test based on system specifications without any reference to the internal structure of the system. The internal structure is unknow or ignored. It is also known as block-box testing. 
@@ -107,7 +117,7 @@ It is an approach to software development in which developers interleave testing
 The aim of this repository is explains how use TDD and other technics, but first i need to clarify the way for read TDD test code.
 
 This is the documentation of the PigLatin exercise:
-[Pig latin documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/PigLatinSpecifics.pdf)
+[Pig latin documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/PigLatinDocumentation.pdf)
 and here there is a project implemented:
 [Project implemented](https://github.com/Armando1514/Software-testing-techniques/tree/master/TDDPiglatin)
 > **Note**: I applied [the testing mutation](https://en.wikipedia.org/wiki/Mutation_testing) technique for evaluate the test case that i wrote, and the score was high. I suggest you to use it for comparison with your code . 
