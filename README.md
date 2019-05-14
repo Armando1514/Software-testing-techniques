@@ -1,17 +1,22 @@
 
 # Software-testing-techniques
 
-Hi! In this repository i am going to analyze different techniques for  **Software Testing**. 
-Exercise:
+Hi! In this repository i am going to analyze different techniques for  for  **Software Testing**.  
+Exercise:  
+
 **Specification based testing exercise**
- - [Tennis game](https://github.com/Armando1514/Software-testing-techniques/tree/master/TSTennisGame), [Pig latin documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/TennisGameDocumentation)
+ - [Tennis game](https://github.com/Armando1514/Software-testing-techniques/tree/master/TSTennisGame), [Pig latin documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/TennisGameDocumentation.pdf)
  -  [Triangle problem](https://github.com/Armando1514/Software-testing-techniques/tree/master/STTriangle), (explanation in theory, scroll down.)
- 
+
+**Code based testing exercise**
+ - [Game of life](https://github.com/Armando1514/Software-testing-techniques/tree/master/CTGOL), [Game of life documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/GameOfLifeDocumentation.pdf)
+
 **TDD exercise**
  - [Pig latin ](https://github.com/Armando1514/Software-testing-techniques/tree/master/TDDPiglatin), [Pig latin documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/PigLatinDoc.pdf)
  - [Fibonacci ](https://github.com/Armando1514/Software-testing-techniques/tree/master/TDDFibonacci), (explanation in theory, scroll down.)
 
-For understand how read the exercise, my suggest is to read the theory, **scroll down**.
+For understand how read the exercise, I suggest reading the theory, **scroll down**.
+
 
 # Specification based testing
 Testing strategy  to design test based on system specifications without any reference to the internal structure of the system. The internal structure is unknow or ignored. It is also known as block-box testing. 
@@ -58,7 +63,7 @@ Four variants of equivalence class testing:
 ## Weak normal equivalence class testing
 Based on the **single-fault** assumption (weak). To define test cases, select one value from each equivalence class of valid values.
 ## Strong normal equivalence class testing
-Based on the **multiple - fault ** assumption (strong). To define
+Based on the **multiple-fault** assumption (strong). To define
 test cases, select one element from the Cartesian product of the equivalence classes of valid values.
 ## Weak robust equivalence class testing
 Based on the **single-fault** assumption. To define test cases, select one value from each equivalence class of both valid and invalid values (robust).
@@ -108,6 +113,17 @@ Four equivalence classes of the output range.
 Because no valid subIntervals of variables a, b and c exist, the strong  normal equivalence class test cases are identical to the weak normal equivalence class test cases (Strong robust too time consuming for implementation).
 Here the implementation:
 [ Test cases for equivalence class testing.](https://github.com/Armando1514/Software-testing-techniques/blob/master/STTriangle/test/sT/EquivalenceClassTesting.java) 
+
+# Code based testing
+Testing strategy to design test cases based on the internal structure of a system (or component). It is also known as **white-box** testing or structural testing. The technic that we analyse is **Control flow** testing. **Basic idea**: given a Control flow Graph (an abstract representation of all possible control flows through a component or system, where nodes are stataements and edges represent flows of control), define a **test coverage criterion** and devise test cases so as to meet it. 
+## Statement testing
+**Test coverage criterion**: each node in the CFG must be covered by a set of test cases at least once. Thus, each statement must be covered at least once.  **Intuition**: statements that have never been executed during testing may contain bugs.
+## Branch testing
+Is a stronger test coverage criterion. **Test coverage criterion**: each edge in the CFG must be covered by a set ot test cases at least once. Thus, each branch must be covered at least once. Branch coverage implies statement coverage.
+## Condition testing
+Is a stronger test coverage criterion. **Test coverage criterion**: each condition outcome (as true and false) in every decision statement must be covered by a set of test cases at least once. Compound conditions can be broken into simple conditions (each of which as true and false outcomes).
+## Path testing
+**Test coverage criterion**: each path in the CFG must be covered by a set of test cases at least once. Look that a number of paths i a system with loops is unbounded, it's necessary a feasible criteria to limit the number of paths to be covered (Loop boundary, cyclomatic complexity etc. ).
 
 # Test driven development
 
