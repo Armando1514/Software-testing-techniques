@@ -2,20 +2,25 @@
 # Software-testing-techniques
 
 Hi! In this repository i am going to analyze different techniques for  for  **Software Testing**.  
-Exercise:  
+exercises:  
 
-**Specification based testing exercise**
- - [Tennis game](https://github.com/Armando1514/Software-testing-techniques/tree/master/TSTennisGame), [Pig latin documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/TennisGameDocumentation.pdf)
- -  [Triangle problem](https://github.com/Armando1514/Software-testing-techniques/tree/master/STTriangle), (explanation in theory, scroll down.)
+**Specification based testing exercises**
+ - [Tennis game](https://github.com/Armando1514/Software-testing-techniques/tree/master/TSTennisGame), [Tennis game documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/TennisGameDocumentation.pdf)
+ -  [Triangle problem](https://github.com/Armando1514/Software-testing-techniques/tree/master/STTennisGame), (explanation in theory, scroll down.)
 
-**Code based testing exercise**
+**Code based testing exercises**
  - [Game of life](https://github.com/Armando1514/Software-testing-techniques/tree/master/CTGOL), [Game of life documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/GameOfLifeDocumentation.pdf)
 
-**TDD exercise**
- - [Pig latin ](https://github.com/Armando1514/Software-testing-techniques/tree/master/TDDPiglatin), [Pig latin documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/PigLatinDoc.pdf)
+**TDD exercises**
+ - [Pig latin ](https://github.com/Armando1514/Software-testing-techniques/tree/master/TDDPiglatin), [Pig latin documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/PigLatinDocumentation.pdf)
  - [Fibonacci ](https://github.com/Armando1514/Software-testing-techniques/tree/master/TDDFibonacci), (explanation in theory, scroll down.)
 
-For understand how read the exercise, I suggest reading the theory, **scroll down**.
+**Incremental Test-Last Development (ITLD) exercise**
+ - [Bowling game ](https://github.com/Armando1514/Software-testing-techniques/tree/master/ITDLBowling), [Bowling Documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/BowlingDocumentation.pdf)
+>Note: first write the production code for a chunk of functionality and then test it, thus repeat the previous step for any other chunk of functionality.
+
+
+For understand how read the exercises, I suggest reading the theory, **scroll down**.
 
 
 # Specification based testing
@@ -38,7 +43,7 @@ it only considers allowed input values:
  >**Note**: it is based on the **single fault assumption**: failures are only rarely the result of the co-occurrence of two (or more) faults.
  
  **How apply it?** 
- Holding the values of all the variables at nominal values, but  one variable at the nominal value, and letting that variable assume its min, min+, nom, max- and max. Repeat this process for each variable ( starting from three variable with nominal value, let one variable assume its full set of values, at the end, repeat the process).
+ Holding the values of all the variables at nominal values, select one variable at the nominal value, and letting that variable assume its min, min+, nom, max- and max. Repeat this process for each variable ( starting from three variable with nominal value, let one variable assume its full set of values, at the end, repeat the process).
 
 
 ## Robust boundary value testing
