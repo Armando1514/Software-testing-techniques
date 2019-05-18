@@ -4,11 +4,17 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestFrame {
 	
-
+	private Frame x;
+	@Before
+	public void setUp()
+	{
+		x = new Frame();
+	}
 	/*
 	 * 1.
 	 * Each turn of a bowling game is called a frame. 10 pins are arranged in each frame
@@ -19,7 +25,6 @@ public class TestFrame {
 	@Test
 	public void testResultOfTheFirstThrow() throws InvalidNumberOfPinsException
 	{
-		Frame x = new Frame();
 		
 		x.setFirstThrow(3);
 		
@@ -29,7 +34,6 @@ public class TestFrame {
 	@Test
 	public void testResultOfTheFirstThrow2() throws InvalidNumberOfPinsException
 	{
-		Frame x = new Frame();
 		
 		x.setFirstThrow(0);
 		
@@ -39,7 +43,6 @@ public class TestFrame {
 	@Test
 	public void testResultOfTheFirstThrow3() throws InvalidNumberOfPinsException
 	{
-		Frame x = new Frame();
 		
 		x.setFirstThrow(10);
 		
@@ -49,7 +52,6 @@ public class TestFrame {
 	@Test
 	public void testResultOfTheSecondThrow() throws InvalidNumberOfPinsException
 	{
-		Frame x = new Frame();
 		
 		x.setSecondThrow(5);
 		
@@ -59,7 +61,6 @@ public class TestFrame {
 	@Test
 	public void testResultOfTheSecondThrow2() throws InvalidNumberOfPinsException
 	{
-		Frame x = new Frame();
 		
 		x.setSecondThrow(0);
 		
@@ -69,7 +70,6 @@ public class TestFrame {
 	@Test
 	public void testResultOfTheSecondThrow10() throws InvalidNumberOfPinsException
 	{
-		Frame x = new Frame();
 		
 		x.setSecondThrow(10);
 		
@@ -81,7 +81,6 @@ public class TestFrame {
 	@Test(expected = InvalidNumberOfPinsException.class)
 	public void testNegativeResultOfTheFirstThrow() throws InvalidNumberOfPinsException
 	{
-		Frame x = new Frame();
 		
 		x.setFirstThrow(-1);
 		
@@ -90,7 +89,6 @@ public class TestFrame {
 	@Test(expected = InvalidNumberOfPinsException.class)
 	public void testBiggetThen10ResultOfTheFirstThrow() throws InvalidNumberOfPinsException
 	{
-		Frame x = new Frame();
 		
 		x.setFirstThrow(11);
 		
@@ -99,7 +97,6 @@ public class TestFrame {
 	@Test(expected = InvalidNumberOfPinsException.class)
 	public void testNegativeResultOfTheSecondThrow() throws InvalidNumberOfPinsException
 	{
-		Frame x = new Frame();
 		
 		x.setSecondThrow(-1);
 		
@@ -108,7 +105,6 @@ public class TestFrame {
 	@Test(expected = InvalidNumberOfPinsException.class)
 	public void testHigherThen10ResultOfTheSecondThrow() throws InvalidNumberOfPinsException
 	{
-		Frame x = new Frame();
 		
 		x.setSecondThrow(11);
 		
@@ -117,7 +113,6 @@ public class TestFrame {
 	@Test(expected = InvalidNumberOfPinsException.class)
 	public void testHigherThen10ResultOfTheSecondAndFirstThrow() throws InvalidNumberOfPinsException
 	{
-		Frame x = new Frame();
 		x.setFirstThrow(5);
 		x.setSecondThrow(6);
 		
@@ -135,7 +130,6 @@ public class TestFrame {
 	@Test
 	public void TestgetScore() throws InvalidNumberOfPinsException {
 		
-	   Frame x = new Frame();
 	   
 	   x.setFirstThrow(2);
 	   
@@ -160,7 +154,6 @@ public class TestFrame {
 	@Test
 	public void TestIsAStrike() throws InvalidNumberOfPinsException {
 		
-	   Frame x = new Frame();
 	   
 	   x.setFirstThrow(10);
 	   
@@ -172,7 +165,6 @@ public class TestFrame {
 	@Test
 	public void TestIsNotAStrike() throws InvalidNumberOfPinsException {
 		
-	   Frame x = new Frame();
 	   
 	   x.setFirstThrow(5);
 	   
@@ -197,7 +189,6 @@ public class TestFrame {
 	@Test
 	public void TestIsASpare() throws InvalidNumberOfPinsException {
 		
-	   Frame x = new Frame();
 	   
 	   x.setFirstThrow(4);
 	   

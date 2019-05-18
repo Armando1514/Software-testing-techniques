@@ -16,7 +16,7 @@ exercises:
  - [Fibonacci ](https://github.com/Armando1514/Software-testing-techniques/tree/master/TDDFibonacci), (explanation in theory, scroll down.)
 
 **Incremental Test-Last Development (ITLD) exercise**
- - [Bowling game ](https://github.com/Armando1514/Software-testing-techniques/tree/master/ITDLBowling), [Bowling Documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/BowlingDocumentation.pdf)
+ - [Bowling game ](https://github.com/Armando1514/Software-testing-techniques/tree/master/ITLDBowling), [Bowling Documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/BowlingDocumentation.pdf)
 >Note: first write the production code for a chunk of functionality and then test it, thus repeat the previous step for any other chunk of functionality.
 
 

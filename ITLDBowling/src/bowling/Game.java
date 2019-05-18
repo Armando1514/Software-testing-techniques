@@ -104,7 +104,6 @@ public class Game {
 			  else 
 				  sum = sum + x[i].getScore();
 			  
-			   System.out.println(i+" "+sum);
 
 
 			}

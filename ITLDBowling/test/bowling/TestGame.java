@@ -2,9 +2,18 @@ package bowling;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestGame {
+	
+	private Game x;
+	
+	@Before
+	public void setUp()
+	{
+		x = new Game();
+	}
 	
 	/* 3.
      * Define a game, which consists of 10 frames
@@ -13,7 +22,6 @@ public class TestGame {
 	@Test
 	public void TestGameFrame() {
 		
-	   Game x = new Game();
 	   
        assertEquals(10 , x.getFrames().length);
        
@@ -29,7 +37,6 @@ public class TestGame {
 	@Test
 	public void TestGameScore10Frames() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(1, 5);
 	   Frame two = new Frame(3, 6);
 	   Frame three = new Frame(7, 2);
@@ -60,7 +67,6 @@ public class TestGame {
 	@Test
 	public void TestGameScore9Frames() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(1, 5);
 	   Frame two = new Frame(3, 6);
 	   Frame three = new Frame(7, 2);
@@ -89,7 +95,6 @@ public class TestGame {
 	@Test
 	public void TestGameScore5Frames() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(1, 5);
 	   Frame two = new Frame(3, 6);
 	   Frame three = new Frame(7, 2);
@@ -110,7 +115,6 @@ public class TestGame {
 	@Test
 	public void TestGameScore1Frame() throws InvalidNumberOfFramesException, InvalidNumberOfPinsException, InvalidBonusScore {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(1, 5);
 
 	   x.setFrames(one);
@@ -131,7 +135,6 @@ public class TestGame {
 	@Test (expected = InvalidNumberOfFramesException.class)
 	public void TestGameScore11Frame() throws Exception {
 		
-		   Game x = new Game();
 		   Frame one = new Frame(1, 5);
 		   Frame two = new Frame(3, 6);
 		   Frame three = new Frame(7, 2);
@@ -177,7 +180,6 @@ public class TestGame {
 	@Test
 	public void TestGameStrikeCalculationWith5StrikeFrames() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(10, 0);
 	   Frame two = new Frame(2, 5);
 	   Frame three = new Frame(10, 0);
@@ -209,7 +211,6 @@ public class TestGame {
 	@Test
 	public void TestGameScore1Strike() throws InvalidNumberOfFramesException, InvalidNumberOfPinsException, InvalidBonusScore {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(10, 0);
 	   Frame two = new Frame(3, 6);
 	   Frame three = new Frame(7, 2);
@@ -253,7 +254,6 @@ public class TestGame {
 	@Test
 	public void TestGameSpareCalculationWith10Frames() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(5, 5);
 	   Frame two = new Frame(5, 5);
 	   Frame three = new Frame(4, 6);
@@ -283,7 +283,6 @@ public class TestGame {
 	@Test
 	public void TestGameSpareCalculationWith9Frames() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(5, 5);
 	   Frame two = new Frame(8, 2);
 	   Frame three = new Frame(4, 6);
@@ -314,7 +313,6 @@ public class TestGame {
 	@Test
 	public void TestGameSpareCalculationWith5Frames() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(5, 5);
 	   Frame two = new Frame(3, 7);
 	   Frame three = new Frame(4, 6);
@@ -344,7 +342,6 @@ public class TestGame {
 	@Test
 	public void TestGameSpareScore1Frame() throws InvalidNumberOfFramesException,InvalidBonusScore, InvalidNumberOfPinsException {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(1, 9);
 	   Frame two = new Frame(3, 6);
 	   Frame three = new Frame(7, 2);
@@ -387,7 +384,6 @@ public class TestGame {
 	@Test
 	public void TestGame1SpareAnd1StrikeScore() throws InvalidNumberOfFramesException, InvalidNumberOfPinsException, InvalidBonusScore {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(1, 9);
 	   Frame two = new Frame(10, 0);
 	   Frame three = new Frame(7, 2);
@@ -418,7 +414,6 @@ public class TestGame {
 	@Test
 	public void TestGame1StrikeAnd1SpareScore() throws InvalidNumberOfFramesException, InvalidNumberOfPinsException, InvalidBonusScore {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(10, 0);
 	   Frame two = new Frame(4, 6);
 	   Frame three = new Frame(7, 2);
@@ -464,7 +459,6 @@ public class TestGame {
 	@Test
 	public void TestGameStrikeCalculationWith2StrikeConsecutiveFrames() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(10, 0);
 	   Frame two = new Frame(10, 0);
 	   Frame three = new Frame(7, 2);
@@ -495,7 +489,6 @@ public class TestGame {
 	@Test
 	public void TestGameStrikeCalculationWith2StrikeConsecutiveFrames2() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(10, 0);
 	   Frame two = new Frame(10, 0);
 	   Frame three = new Frame(10, 0);
@@ -528,7 +521,6 @@ public class TestGame {
 	@Test
 	public void TestGameStrikeCalculationWith9StrikeConsecutive() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(10, 0);
 	   Frame two = new Frame(10, 0);
 	   Frame three = new Frame(10, 0);
@@ -564,7 +556,6 @@ public class TestGame {
 	@Test
 	public void TestGameStrikeCalculationWith9ConsecutiveStrike2() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(10, 0);
 	   Frame two = new Frame(10, 0);
 	   Frame three = new Frame(10, 0);
@@ -599,7 +590,6 @@ public class TestGame {
 	@Test
 	public void TestGameStrikeCalculationWith8ConsecutiveStrike() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(5, 0);
 	   Frame two = new Frame(10, 0);
 	   Frame three = new Frame(10, 0);
@@ -633,7 +623,6 @@ public class TestGame {
 	@Test
 	public void TestGameStrikeCalculationWith3StrikesConsecutive() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(10, 0);
 	   Frame two = new Frame(10, 0);
 	   Frame three = new Frame(2, 5);
@@ -677,7 +666,6 @@ public class TestGame {
 	@Test
 	public void TestGameSpareCalculationWith2SpareConsecutiveFrames() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(8, 2);
 	   Frame two = new Frame(5, 5);
 	   Frame three = new Frame(7, 2);
@@ -707,7 +695,6 @@ public class TestGame {
 	@Test
 	public void TestGameSpareCalculationWith9SpareConsecutiveFrames() throws Exception {
 		
-		 Game x = new Game();
 		 Frame one = new Frame(8, 2);
 		 Frame two = new Frame(5, 5);
 		 Frame three = new Frame(5, 5);
@@ -754,7 +741,6 @@ int result = (8 + 2 + 5) + (5 + 5 + 5) + (5 + 5 + 4) +
 	@Test
 	public void TestGameWithLastThrowSpare() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(1, 5);
 	   Frame two = new Frame(3, 6);
 	   Frame three = new Frame(7, 2);
@@ -783,7 +769,6 @@ int result = (8 + 2 + 5) + (5 + 5 + 5) + (5 + 5 + 4) +
 	@Test (expected = InvalidBonusScore.class)
 	public void TestGameWithNotLastThrowSpare() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(1, 5);
 	   Frame two = new Frame(3, 6);
 	   Frame three = new Frame(7, 2);
@@ -825,7 +810,6 @@ int result = (8 + 2 + 5) + (5 + 5 + 5) + (5 + 5 + 4) +
 	@Test
 	public void TestGameWithLastThrowStrike() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(1, 5);
 	   Frame two = new Frame(3, 6);
 	   Frame three = new Frame(7, 2);
@@ -854,7 +838,6 @@ int result = (8 + 2 + 5) + (5 + 5 + 5) + (5 + 5 + 4) +
 	@Test (expected = InvalidBonusScore.class)
 	public void TestGameWithNotLastThrowStrike() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(1, 5);
 	   Frame two = new Frame(3, 6);
 	   Frame three = new Frame(7, 2);
@@ -893,7 +876,6 @@ int result = (8 + 2 + 5) + (5 + 5 + 5) + (5 + 5 + 4) +
 	@Test
 	public void TestGameWithLastThrowStrikeAndBonusStrike() throws Exception {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(1, 5);
 	   Frame two = new Frame(3, 6);
 	   Frame three = new Frame(7, 2);
@@ -922,7 +904,6 @@ int result = (8 + 2 + 5) + (5 + 5 + 5) + (5 + 5 + 4) +
 	@Test (expected = InvalidBonusScore.class)
 	public void TestGameWithLastThrowStrikeAndBonusStrikeNoBonus() throws Exception {
 		
-		  Game x = new Game();
 		   Frame one = new Frame(1, 5);
 		   Frame two = new Frame(3, 6);
 		   Frame three = new Frame(7, 2);
@@ -957,7 +938,6 @@ int result = (8 + 2 + 5) + (5 + 5 + 5) + (5 + 5 + 4) +
 	@Test
 	public void testBestScore() throws InvalidNumberOfPinsException, InvalidBonusScore, InvalidNumberOfFramesException {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(10, 0);
 	   Frame two = new Frame(10, 0);
 	   Frame three = new Frame(10, 0);
@@ -987,7 +967,6 @@ int result = (8 + 2 + 5) + (5 + 5 + 5) + (5 + 5 + 4) +
 	@Test
 	public void testNearBestScore() throws InvalidNumberOfPinsException, InvalidBonusScore, InvalidNumberOfFramesException {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(10, 0);
 	   Frame two = new Frame(10, 0);
 	   Frame three = new Frame(10, 0);
@@ -1028,7 +1007,6 @@ int result = (8 + 2 + 5) + (5 + 5 + 5) + (5 + 5 + 4) +
 	@Test
 	public void testExampleScore() throws InvalidNumberOfPinsException, InvalidBonusScore, InvalidNumberOfFramesException {
 		
-	   Game x = new Game();
 	   Frame one = new Frame(6, 3);
 	   Frame two = new Frame(7, 1);
 	   Frame three = new Frame(8, 2);
