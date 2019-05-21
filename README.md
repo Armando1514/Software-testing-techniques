@@ -13,6 +13,7 @@ exercises:
 
 **TDD exercises**
  - [Pig latin ](https://github.com/Armando1514/Software-testing-techniques/tree/master/TDDPiglatin), [Pig latin documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/PigLatinDocumentation.pdf)
+ - [Mars rover ](https://github.com/Armando1514/Software-testing-techniques/tree/master/TDDMarsRover), [Mars rover documentation](https://github.com/Armando1514/Software-testing-techniques/blob/master/MarsRoverDocumentation.pdf)
  - [Fibonacci ](https://github.com/Armando1514/Software-testing-techniques/tree/master/TDDFibonacci), (explanation in theory, scroll down.)
 
 **Incremental Test-Last Development (ITLD) exercise**
@@ -98,7 +99,7 @@ In any conditions C4, C5 and C6 is not met, the program output is NotATriangle.
 
 ## Normal Boundary value testing and robust boundary value testing
 
-For n input variables in the normal boundary value we have **4n +1 ** test cases.
+For n input variables in the normal boundary value we have **4n +1** test cases.
 The implementation of normal boundary testing is in the directory below, i also provide an implementation of the robust boundary testing. 
 [ Test cases for robust boundary testing and normal boundary testing.](https://github.com/Armando1514/Software-testing-techniques/blob/master/STTriangle/test/sT/BoundaryValueTestingTriangle.java) 
 
